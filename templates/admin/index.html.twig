@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h4 class="title">Administration</h4>
+    <div class="admin_button">
+        <a class="btn-admin " href="{{path('create_recipes')}}">Ajouter un article</a>
+        <a class="btn-admin" href="{{path('admin_contact')}}">Contact</a>
+    </div>
+    <table class="table table-striped admin_table">
+        <thead>
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+                <tr>
+                <th scope="row">{{recipe.id}}</th>
+                <td>{{recipe.title}}</td>
+                <td>{{recipe.getCategory.name}}</td>
+                <td>
+                    <a class="btn-modif" href="{{path('modify_recipes', {id: recipe.id})}}">Modifier</a>
+                    <a class="btn-delete" href="{{path('delete_recipes', {id: recipe.id})}}">Supprimer</a>
+                </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

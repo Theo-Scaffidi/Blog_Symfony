@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.navbar{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #F8F9F7;
+}
+.title{
+    text-align: center;
+    color: #84947B;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+.lobster_title{
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Lobster', cursive;
+}
+.logo{
+    object-fit: cover;
+    width: 170px;
+    margin-top: 50px;
+}
+.line1{
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.linebold{
+    opacity: 100%;
+}
+.line2{
+    margin-top: 10px;
+    width: 30px;
+}
+.line3{
+    margin-top: 40px;
+}
+.line4{
+    color: #B2996B;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    margin-right: 5px;
+    width: 45%;
+}
+.line5{
+    color: #B2996B;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    width: 45%;
+}
+.line6{
+    color: #B2996B;
+    margin-top: 40px;
+}
+.line7{
+    margin-top: 10px;
+}
+.mainTitle{
+    letter-spacing: 3px;
+}
+.hometext{
+    margin-top: 20px;
+}
+.text-justify{
+    text-align: justify;
+}
+.italic{
+    font-style: italic;
+}
+.content{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.imgrecipes{
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+.imgrecipes_mini{
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
+.img_about{
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+}
+.imgrecipes_detail{
+    object-fit: cover;
+    width: 90%;
+    height: 400px;
+}
+.reseau_sociaux{
+    display: flex;
+}
+.logo_sociaux{
+    object-fit: cover;
+    width: 40px;
+}
+.pinterest{
+    width: 70px;
+}
+.facebook{
+    width: 45px;
+    padding-left: 7px;
+}
+.star_line{
+    display: flex;
+}
+.star{
+    margin-top: 42px;
+    color: #B2996B;
+    width: 10%;
+}
+.recipes_info{
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.user_date{
+    color: #84947B;
+    display: flex;
+}
+.icon_user{
+    margin-top: 4px;
+    margin-right: 2px;
+}
+.date{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.detail_button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #84947B;
+    color: white;
+    text-decoration: none;
+}
+.detail_button:hover{
+    color: white;
+}
+.nbr_comment{
+    display: flex;
+}
+.icon_comment{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.user_date_detail{
+    color: #84947B;
+    display: flex;
+    margin-left: 5%;
+}
+.detail_margin{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.comment_info{
+    color: #84947B;
+    margin-bottom: 3px;
+}
+.comment-form{
+    width: 100%;
+    padding-bottom: 100px;
+}
+.btn-comment{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #84947B;
+    color: white;
+    text-decoration: none;
+    border: 0px;
+    margin: 20px 0;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.btn-admin{
+    justify-content: center;
+    padding: 10px;
+    background-color: #84947B;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.btn-admin:hover{
+    color: white;
+}
+.admin_button{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.admin_table{
+    margin-top: 30px;
+}
+.btn-modif{
+    justify-content: center;
+    padding: 10px;
+    background-color: #B2996B;
+    color: white;
+    text-decoration: none;
+}
+.btn-modif:hover{
+    color: white;
+}
+.btn-delete{
+    justify-content: center;
+    padding: 10px;
+    background-color: #ff2323;
+    color: white;
+    text-decoration: none;
+}
+.btn-delete:hover{
+    color: white;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.email_contact{
+    margin-bottom: 20px;
+}
+.message_contact{
+    padding-bottom: 100px;
+}
+.contact_btn{
+    width: 40%;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #84947B;
+    color: white;
+    text-decoration: none;
+    border: 0px;
+    margin: 20px 0;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login_email{
+    margin-bottom: 20px;
+}
+.login_btn{
+    width: 40%;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #84947B;
+    color: white;
+    text-decoration: none;
+    border: 0px;
+    margin: 20px 0;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.create_recipes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recipes_title{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.recipes_content{
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 100px;
+}
+.recipes_img{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 1px;
+    margin-right: 8%;
+}
+.recipes_category{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 1px;
+    margin-right: 8%;
+}
+.create_recipes_btn{
+    width: 40%;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #84947B;
+    color: white;
+    text-decoration: none;
+    border: 0px;
+    margin: 20px 0;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.footer{
+    display: flex;
+    margin-top: 30px;
+    background-color: #F8F9F7;
+}
+.text_footer{
+    margin-top: 18px;
+    margin-left: 5px;
+}
+.reseau_sociaux_footer{
+    margin-left: 60%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.logo_sociaux_footer{
+    object-fit: cover;
+    width: 20px;
+}
+.pinterest_footer{
+    width: 40px;
+}
+.facebook_footer{
+    width: 25px;
+    padding-left: 7px;
+}
+.recent_recipes{
+    display: flex;
+}
+.recent-recipe{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.register_button{
+    text-align: center;
+    text-decoration: none;
+    color: #84947B;
+    margin-top: 30px;
+}
+.register_button:hover{
+    text-align: center;
+    text-decoration: none;
+    color: #84947B;
+    margin-top: 30px;
+}
+

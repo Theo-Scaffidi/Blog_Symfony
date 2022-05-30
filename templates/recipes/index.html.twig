@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RecipesController!{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+	<h4 class="title">Bienvenue sur Aventures Gustatives !</h4>
+	<div class="content">
+		{% for recipe in recipes %}
+			<img class="rounded mx-auto d-block imgrecipes" src="{{ asset('uploads/images/'~recipe.picture~'') }}"/>
+
+			<div class="recipes_info">
+				<div class="user_date">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill icon_user" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+					<p>{{recipe.getPseudo.pseudo}}</p>
+					<li class="date">Le {{recipe.date|date('d/m/Y')}}</li>
+					<li>{{recipe.getCategory.name}}</li>
+				</div>
+				<h4>{{recipe.title}}</h4>
+				<p class="reduc_text">{{recipe.content}}</p>
+				<a class="detail_button" href="{{path('detail_recipes', {id: recipe.id})}}">Voir plus</a>
+				<hr class="line7">
+				<div class="nbr_comment">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-fill icon_comment" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/></svg>
+					<p>{{recipe.getMessengers|length}} commentaires</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

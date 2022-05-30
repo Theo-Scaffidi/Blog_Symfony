@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RecipesController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+	<div class="content">
+		<div class="recipes_info">
+			<div class="user_date_detail">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill icon_user" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+				<p>{{recipes.getPseudo.pseudo}}</p>
+				<li class="date">Le {{recipes.date|date('d/m/Y')}}</li>
+				<li>{{category.name}}</li>
+			</div>
+			<h4 class="detail_margin">{{recipes.title}}</h4>
+			<p class="detail_margin reduc_text">{{recipes.content}}</p>
+			<img class="rounded mx-auto d-block imgrecipes_detail" src="{{ asset('uploads/images/'~recipes.picture~'') }}"/>
+			<p class="detail_margin">{{recipes.content}}</p>
+			<hr class="line7 detail_margin">
+			<div class="nbr_comment detail_margin">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-fill icon_comment" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/></svg>
+				<p>{{recipes.getMessengers|length}} commentaires</p>
+			</div>
+			{% for message in messenger %}
+				<div class="detail_margin">
+					<p class="comment_info">Rédigé par {{message.getPseudo.pseudo}}, le {{message.date|date('d/m/Y H:i')}}</p>
+					<p>{{message.comment}}</p>
+				</div>
+			{% endfor %}
+		</div>
+		<b><p>Laisser un commentaire</p>
+		{{ form_start(messengerForm) }}
+			{{ form_row(messengerForm.comment) }}
+			<button type="submit" class="btn-comment">Envoyer</button>
+		{{ form_end(messengerForm) }}
+		<b><p>Recettes récentes</p>
+		<div class="recent_recipes">
+			<div>
+				<img class="rounded mx-auto d-block imgrecipes_mini" src="{{ asset('uploads/images/'~recipesDate[0].picture~'') }}"/>
+
+				<div class="recipes_info">
+					<h4>{{recipesDate[0].title}}</h4>
+					<p class="reduc_text2">{{recipesDate[0].content}}</p>
+					<a class="detail_button" href="{{path('detail_recipes', {id: recipesDate[0].id})}}">Voir plus</a>
+					<hr class="line7">
+					<div class="nbr_comment">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-fill icon_comment" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/></svg>
+						<p>{{recipesDate[0].getMessengers|length}} commentaires</p>
+					</div>
+				</div>
+			</div>
+			<div class="recent-recipe">
+				<img class="rounded mx-auto d-block imgrecipes_mini" src="{{ asset('uploads/images/'~recipesDate[1].picture~'') }}"/>
+
+				<div class="recipes_info">
+					<h4>{{recipesDate[1].title}}</h4>
+					<p class="reduc_text2">{{recipesDate[0].content}}</p>
+					<a class="detail_button" href="{{path('detail_recipes', {id: recipesDate[1].id})}}">Voir plus</a>
+					<hr class="line7">
+					<div class="nbr_comment">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-fill icon_comment" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/></svg>
+						<p>{{recipesDate[1].getMessengers|length}} commentaires</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img class="rounded mx-auto d-block imgrecipes_mini" src="{{ asset('uploads/images/'~recipesDate[2].picture~'') }}"/>
+
+				<div class="recipes_info">
+					<h4>{{recipesDate[2].title}}</h4>
+					<p class="reduc_text2">{{recipesDate[2].content}}</p>
+					<a class="detail_button" href="{{path('detail_recipes', {id: recipesDate[2].id})}}">Voir plus</a>
+					<hr class="line7">
+					<div class="nbr_comment">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-fill icon_comment" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/></svg>
+						<p>{{recipesDate[2].getMessengers|length}} commentaires</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+{% endblock %}

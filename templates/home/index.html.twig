@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+	<h4 class="title">Bienvenue sur Aventures Gustatives !</h4>
+	<div class="content">
+		<p class="text-justify hometext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat ex ut aliquet vulputate. Donec id finibus quam, sit amet fringilla orci. Aenean libero urna, auctor ac posuere ac, tristique id justo. Sed sed suscipit ipsum. Ut id suscipit metus. Donec ullamcorper vulputate lectus, nec facilisis orci dignissim ut. Maecenas eleifend faucibus elementum. In hac habitasse platea dictumst. In purus felis, tincidunt in mi semper, commodo ultrices turpis. Sed et sem malesuada, porta libero vitae, viverra mauris. Mauris sit amet enim a neque vulputate elementum.</p>
+		<div class="row">
+			<div class="col-4 content2">
+				<p class="italic">Bonjour</p>
+				<hr class="linebold line2"></hr>
+				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<hr class="linebold line3"></hr>
+				<div class="reseau_sociaux">
+					<a href="https://www.instagram.com/?hl=fr" class="mx-auto logo_sociaux"><img class="mx-auto logo_sociaux" src="{{ asset('image/instagram.png') }}"></img></a>
+					<a href="https://fr-fr.facebook.com/" class="mx-auto logo_sociaux facebook"><img class="mx-auto logo_sociaux facebook" src="{{ asset('image/facebook.png') }}"></img></a>
+					<a href="https://www.pinterest.fr/" class="mx-auto logo_sociaux pinterest"><img class="mx-auto logo_sociaux pinterest" src="{{ asset('image/pinterest.png') }}"></img></a>
+					<a href="https://www.youtube.com/" class="mx-auto logo_sociaux"><img class="mx-auto logo_sociaux" src="{{ asset('image/youtube.png') }}"></img></a>
+				</div>
+				<div class="star_line">
+					<hr class="linebold line4"></hr>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill star" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>
+					<hr class="linebold line5"></hr>
+				</div>
+				<h2 class="italic lobster_title">Elu meilleur blog<br>culinaire</h2>
+				<hr class="linebold line6"></hr>
+				<p class="italic">Dernière recette</p>
+				<hr class="linebold line2"></hr>
+				<img class="rounded mx-auto d-block imgrecipes_mini" src="{{ asset('uploads/images/'~recipesDate[0].picture~'') }}"/>
+
+				<div class="recipes_info">
+					<p>{{recipesDate[0].title}}</p>
+					<a class="detail_button" href="{{path('detail_recipes', {id: recipesDate[0].id})}}">Voir plus</a>
+				</div>
+			</div>
+			<div class="col-8 content3">
+				{% for recipe in recipes %}
+					{# <img class="rounded mx-auto d-block imgrecipes" src="{{ asset('image/{{recipe.picture}}') }}"></img> #}
+					<img class="rounded mx-auto d-block imgrecipes" src="{{ asset('uploads/images/'~recipe.picture~'') }}"/>
+
+					<div class="recipes_info">
+						<div class="user_date">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill icon_user" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+							<p>{{recipe.getPseudo.pseudo}}</p>
+							<li class="date">Le {{recipe.date|date('d/m/Y')}}</li>
+							<li>{{recipe.getCategory.name}}</li>
+						</div>
+						<h4>{{recipe.title}}</h4>
+						<p class="reduc_text">{{recipe.content}}</p>
+						<a class="detail_button" href="{{path('detail_recipes', {id: recipe.id})}}">Voir plus</a>
+						<hr class="line7">
+						<div class="nbr_comment">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-fill icon_comment" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/></svg>
+							<p>{{recipe.getMessengers|length}} commentaires</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
